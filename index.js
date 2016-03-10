@@ -12,7 +12,7 @@ module.exports = {
     async.waterfall([
       this.generateGlyphs.bind(
         this,
-        options.svgsDir
+        options.svgDir
       ),
       this.generateSass.bind(
         this,
@@ -32,10 +32,14 @@ module.exports = {
       )
     ], cb);
   },
-  generateGlyphs(svgsDir, cb) {
-    glob(path.join(svgsDir, "*.svg"), function (err, files) {
+  generateGlyphs(svgDir, cb) {
+    glob(path.join(svgDir, "*.svg"), function (err, files) {
       if (err) {
         return cb(err);
+      }
+
+      if (files.length === 0) {
+        return cb(new Error("no SVGs found at " + svgDir));
       }
 
       var baseCodePoint = 0xF101;
