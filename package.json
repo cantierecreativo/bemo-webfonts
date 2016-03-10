@@ -1,0 +1,27 @@
+{
+  "name": "bemo-webfonts",
+  "version": "1.0.0",
+  "description": "Given a directory full of SVGs, generate a WOFF webfont and a SASS file compatible with BEMO.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bemo-webfonts": "./cli.js"
+  },
+  "keywords": [
+    "bemo",
+    "webfonts"
+  ],
+  "author": "Stefano Verna",
+  "license": "ISC",
+  "dependencies": {
+    "async": "1.5.2",
+    "ejs": "2.4.1",
+    "glob": "7.0.3",
+    "minimist": "1.2.0",
+    "svg2ttf": "4.0.0",
+    "svgicons2svgfont": "5.0.0",
+    "ttf2woff": "2.0.1"
+  }
+}
